@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "cStandard": "c23",
+            "cppStandard": "c++23",
+            "intelliSenseMode": "linux-clang-x64",
+            "compilerPath": "/usr/bin/clang",
+            "compilerArgs": [
+                "-Weverything",
+                "-Werror",
+                "-Wno-vla",
+                "-Wno-gnu-folding-constant"
+            ]
+        },
+    ],
+    "version": 4
+}
