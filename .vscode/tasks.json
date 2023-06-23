@@ -8,6 +8,7 @@
 			"args": [
 				"-fcolor-diagnostics",
 				"-fansi-escape-codes",
+				"-O0",
 				"-g",
 				"${file}",
 				"-o",
@@ -15,7 +16,7 @@
 				"-Weverything",
 				"-Werror",
 				"-Wno-vla",
-				"-Wno-gnu-folding-constant"
+				"-Wno-gnu-folding-constant",
 			],
 			"options": {
 				"cwd": "${fileDirname}"

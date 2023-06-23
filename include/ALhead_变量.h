@@ -1,54 +1,54 @@
+// ***********************************************************************
+// 执行定义判断
 #ifndef ALhead_变量
 #define ALhead_变量
 
 #include <stdio.h>
 
-#define llong long long
-#define ullong unsigned long long
-#define cst const
-#define str struct
+// ***********************************************************************
+// 常量声明
 
-// ********************************************************************************
+#define usg unsigned // 数据类型_缩写
+#define uint unsigned int // 数据类型_缩写
+#define llong long long // 复合数据类型_缩写
+#define ullong unsigned long long // 复合数据类型_缩写
+#define cst const // 声明常量_缩写
+#define sta static // 静态声明_缩写
+#define str struct // 结构体_缩写
+
+// ***********************************************************************
 // 函数原型声明
 
-/// @brief 复制一段内存复制到另一段内存
-/// @param 复制源_地址 复制内存的源地址
-/// @param 复制目标_地址 复制内存的目标地址
-/// @param 复制_元素数量 复制内存的元素数量
-void 复制内存(llong *复制源_地址, llong *复制目标_地址, llong 复制_元素数量);
+/// @brief 打印数组的指定成员
+/// @param array 指定打印的数组
+/// @param arraySize 数组的字节数
+/// @param elementSize 元素的字节数
+/// @param printType 指定一个可以打印该类型数组的函数
+void printArray(const void *array, ullong arraySize, ullong elementSize, void (*printType)(const void *));
 
-/// @brief 使用printf打印数组元素
-/// @param 元素数量 要[打印的数组]的元素数量
-/// @param 数组 欲打印数组的首地址
-/// @note 结尾处不会自动输出'\\n'
-void 打印数组(llong 元素数量, llong *数组);
-
-// ********************************************************************************
+// ***********************************************************************
 // 函数定义
 
-void 复制内存(llong *复制源_地址, llong *复制目标_地址, llong 复制_元素数量) {
-  // 初始化_首
-  llong i_1;
-  //开始执行
-  for (i_1 = 0; i_1 < 复制_元素数量; i_1++) {
-    复制目标_地址[i_1] = 复制源_地址[i_1];
+void printArray(const void *array, ullong arraySize, ullong elementSize, void (*printType)(const void *)) {
+  ullong elementConst; /// @brief 元素数量
+  const char *array_2; /// @brief 打印的数组
+  ullong i_1;
+  // 初始化_次
+  elementConst = sizeof(arraySize) / sizeof(elementSize);
+  array_2 = array;
+  // 开始执行
+  { // 打印数组
+    printf("{");
+    for(i_1 = 0; i_1 < elementConst; i_1++) { // 打印数组元素
+      printType(array_2);
+      array_2 += elementSize;
+    }
+    printf("}");
   }
-  //结束
-  // return;
+  // 结束
+  return;
 }
 
-void 打印数组(llong 元素数量, llong *数组) {
-  //初始化
-  llong 数组最大下标 = 元素数量 - 1;
-  llong i_1;
-  //开始执行
-  printf("{");
-  for (i_1 = 0; i_1 < 数组最大下标; i_1++) {
-    printf("%lld, ", 数组[i_1]);
-  }
-  printf("%lld", 数组[数组最大下标]);
-  printf("}");
-  //结束
-}
-
+// ***********************************************************************
+// 结束定义判断
 #endif // ALhead_变量
