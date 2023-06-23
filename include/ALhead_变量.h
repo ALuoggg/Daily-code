@@ -37,7 +37,7 @@ void 复制内存(llong *复制源_地址, llong *复制目标_地址, llong 复
   // return;
 }
 
-void 打印数组(llong 元素数量, llong 数组[]) {
+void 打印数组(llong 元素数量, llong *数组) {
   //初始化
   llong 数组最大下标 = 元素数量 - 1;
   llong i_1;
