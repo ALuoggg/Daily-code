@@ -24,12 +24,12 @@
 /// @param arraySize 数组的字节数
 /// @param elementSize 元素的字节数
 /// @param printType 指定一个可以打印该类型数组的函数
-void printArray(const void *array, ullong arraySize, ullong elementSize, void (*printType)(const void *));
+void print_array(const void *array, ullong arraySize, ullong elementSize, void (*printType)(const void *));
 
 // ***********************************************************************
 // 函数定义
 
-void printArray(const void *array, ullong arraySize, ullong elementSize, void (*printType)(const void *)) {
+void print_array(const void *array, ullong arraySize, ullong elementSize, void (*printType)(const void *)) {
   ullong elementConst; /// @brief 元素数量
   cst char *array_2; /// @brief 打印的数组
   cst char *arrayEnd; /// @brief 数组尾元素的首地址

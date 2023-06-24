@@ -22,14 +22,14 @@ int main(void) {
   mem_set(b, 35, 100);
   // 开始执行
   mem_cpy(a, b, sizeof(a));
-  printArray(b, sizeof(b), sizeof(b[0]), printChar);
+  print_array(b, sizeof(b), sizeof(b[0]), printChar);
   // 结束
   return (1);
 }
 
 void printChar(const void *pointer) {
   // 初始化_首
-  const char *pointer_2;
+  const char *pointer_2; //
   // 初始化_次
   pointer_2 = pointer;
   // 开始执行

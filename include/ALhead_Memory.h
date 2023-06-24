@@ -9,8 +9,9 @@
 /// @brief 复制一段内存复制到另一段内存
 /// @param 复制源_地址 复制内存的源地址
 /// @param 复制目标_地址 复制内存的目标地址
-/// @param 复制_元素数量 复制内存的元素数量
-void *mem_cpy(const void *复制源_地址, void *复制目标_地址, unsigned long long 复制_元素数量);
+/// @param 复制_元素数量 复制内存的字节数
+/// @return 返回值是参数中的[复制目标_地址]
+void *mem_cpy(const void *source, void *destination, unsigned long long size);
 
 /// @brief 填充内存块
 /// @param pointer 填充内存块的首地址
@@ -22,17 +23,17 @@ void *mem_set(void *pointer, unsigned char value, unsigned long long size);
 // ***********************************************************************
 // 函数定义
 
-void *mem_cpy(const void *复制源_地址, void *复制目标_地址, unsigned long long 复制_字节数) {
+void *mem_cpy(const void *source, void *destination, unsigned long long size) {
   // 初始化_首
   unsigned long long i_1;
-  const char *复制源_地址_2 = 复制源_地址;
-  char *复制目标_地址_2 = 复制目标_地址;
+  const char *复制源_地址_2 = source;
+  char *复制目标_地址_2 = destination;
   // 开始执行
-  for(i_1 = 0; i_1 < 复制_字节数; i_1++) {
+  for(i_1 = 0; i_1 < size; i_1++) {
     *(复制目标_地址_2++) = *(复制源_地址_2++);
   }
   // 结束
-  return (复制目标_地址);
+  return (destination);
 }
 
 void *mem_set(void *pointer, unsigned char value, unsigned long long size) {
