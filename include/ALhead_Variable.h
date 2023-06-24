@@ -1,7 +1,10 @@
 // ***********************************************************************
 // 判断_头文件引用
-#ifndef ALhead_Variable
-#define ALhead_Variable
+#ifndef ALhead_Variable // 变量
+#define ALhead_Variable // 变量
+
+// ***********************************************************************
+// 引用头文件
 
 #include <stdio.h>
 
