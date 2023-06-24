@@ -9,17 +9,6 @@
 #include <stdio.h>
 
 // ***********************************************************************
-// 常量声明
-
-#define usg unsigned // 数据类型_缩写
-#define cst const // 声明常量_缩写
-#define sta static // 静态声明_缩写
-#define str struct // 结构体_缩写
-#define uint unsigned int // 复合数据类型_缩写
-#define llong long long // 复合数据类型_缩写
-#define ullong unsigned long long // 复合数据类型_缩写
-
-// ***********************************************************************
 // 函数原型声明
 
 /// @brief 打印数组的指定成员
@@ -27,15 +16,15 @@
 /// @param arraySize 数组的字节数
 /// @param elementSize 元素的字节数
 /// @param printType 指定一个可以打印该类型数组的函数
-void print_array(const void *array, ullong arraySize, ullong elementSize, void (*printType)(const void *));
+void print_array(const void *array, unsigned long long arraySize, unsigned long long elementSize, void (*printType)(const void *));
 
 // ***********************************************************************
 // 函数定义
 
-void print_array(const void *array, ullong arraySize, ullong elementSize, void (*printType)(const void *)) {
-  ullong elementConst; /// @brief 元素数量
-  cst char *array_2; /// @brief 打印的数组
-  cst char *arrayEnd; /// @brief 数组尾元素的首地址
+void print_array(const void *array, unsigned long long arraySize, unsigned long long elementSize, void (*printType)(const void *)) {
+  unsigned long long elementConst; /// @brief 元素数量
+  const char *array_2; /// @brief 打印的数组
+  const char *arrayEnd; /// @brief 数组尾元素的首地址
   // 初始化_次
   elementConst = arraySize / elementSize;
   array_2 = array;
