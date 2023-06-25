@@ -12,11 +12,12 @@
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}/a.out",
-				"-Weverything",
-				"-Werror",
-				"-Wno-vla",
-				"-Wno-gnu-folding-constant",
+				"${fileDirname}/${fileBasenameNoExtension}", // 指定编译后的文件名
+				"-std=c17", // 指定C标准
+				"-Weverything", // 开启所有警告
+				"-Werror", // 把所有警告时为错误
+				"-Wno-vla", // 忽略指定警告
+				"-Wno-gnu-folding-constant", // 忽略指定警告
 			],
 			"options": {
 				"cwd": "${fileDirname}"

@@ -7,9 +7,9 @@
 // 函数原型声明
 
 /// @brief 复制一段内存到另一段内存
-/// @param 复制源_地址 复制内存的源地址
-/// @param 复制目标_地址 复制内存的目标地址
-/// @param 复制_元素数量 复制内存的字节数
+/// @param source 复制内存的源地址
+/// @param destination 复制内存的目标地址
+/// @param size 复制内存的字节数
 /// @return 返回值是参数中的[复制目标_地址]
 void *mem_cpy(const void *source, void *destination, unsigned long long size);
 
