@@ -4,8 +4,11 @@
 #include "../include/ALhead_constant.h"
 
 // ***********************************************************************
-// 全局变量声明
-void *待释放的指针;
+// 常量声明
+// #define FALSE 0
+
+// ***********************************************************************
+// 全局变量
 
 // ***********************************************************************
 // 函数原型声明
@@ -14,7 +17,7 @@ int main(void);
 
 /// @brief 求_第[rank]个斐波那契数
 /// @param rank 指定所求的斐波那契数
-/// @return 返回对应的斐波那契数
+/// @return 返回对应的斐波那契数//返回值//错误: 0
 unsigned long long get_FibonacciNumber(const unsigned long long rank);
 
 // ***********************************************************************
@@ -47,37 +50,33 @@ int main(void) {
 
 unsigned long long get_FibonacciNumber(const unsigned long long rank) {
   // 初始化_首
-  static unsigned long long *FibonacciNumber = NULL; // @brief 斐波那契数列
-  static unsigned long long *NewFibonacciNumber = NULL; // @brief 新_斐波那契数列
-  static unsigned long long lastrank;
+  unsigned long long *FibonacciNumber; // @brief 斐波那契数列
+
   unsigned long long i_1; // @brief 循环变量
   // 特例
   if((rank == 1) || (rank == 2)) {
     return (1);
   }
+  else { // 代码格式需要
+  }
+  if(rank == 0) { // 没有第0个斐波那契数!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    return (0);
+  }
   // 初始化_次
-  if((FibonacciNumber == NULL) || (lastrank < rank)) { // 没计算过斐波那契数列 || 之前计算过的斐波那契数列大小不满足这次的需求
-    if(FibonacciNumber != NULL) { // 之前计算过的斐波那契数列大小不满足这次的需求
-      NewFibonacciNumber = malloc(sizeof(unsigned long long) * rank);
-      mem_cpy(FibonacciNumber, NewFibonacciNumber, sizeof(FibonacciNumber));
-      free(FibonacciNumber);
-      FibonacciNumber = NewFibonacciNumber;
-    }
-    else { // 没计算过斐波那契数列
-      FibonacciNumber = malloc(sizeof(unsigned long long) * rank);
-    }
-    { // 计算斐波那契数列
-      FibonacciNumber[0] = 1;
-      FibonacciNumber[1] = 1;
-      for(i_1 = 2; i_1 < rank; i_1++) {
-        FibonacciNumber[i_1] = FibonacciNumber[i_1 - 1] + FibonacciNumber[i_1 - 2];
-      }
-    }
-  }
-  else if(lastrank >= rank) {
-    // 此时可以直接从已经计算完的数列里提取
-  }
   // 开始执行
+  if((FibonacciNumber = malloc(sizeof(unsigned long long) * rank)) == NULL) { // 申请内存块_如果失败
+    // 发生错误,中断函数 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    printf("错误: `get_FibonacciNumber`函数 内存申请失败!");
+    return (0);
+  }
+  { // @brief 计算斐波那契数列
+    FibonacciNumber[0] = 1;
+    FibonacciNumber[1] = 1;
+    for(i_1 = 2; i_1 < rank; i_1++) {
+      FibonacciNumber[i_1] = FibonacciNumber[i_1 - 1] + FibonacciNumber[i_1 - 2];
+    }
+  }
   // 结束
+  free(FibonacciNumber);
   return (FibonacciNumber[rank - 1]);
 }
