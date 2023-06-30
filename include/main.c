@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "./include/ALhead_Memory.h"
+#include "../include/ALhead_Memory.h"
 
 // ***********************************************************************
 // 函数原型声明

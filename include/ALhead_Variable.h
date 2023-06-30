@@ -1,7 +1,7 @@
 // ***********************************************************************
 // 判断_头文件引用
-#ifndef ALhead_Variable // 变量
-#define ALhead_Variable // 变量
+#ifndef _ALhead_Variable // 变量
+#define _ALhead_Variable // 变量
 
 // ***********************************************************************
 // 引用头文件
@@ -45,4 +45,4 @@ void print_array(const void *array, unsigned long long arraySize, unsigned long 
 
 // ***********************************************************************
 // 结束判断_头文件引用
-#endif // ALhead_Variable
+#endif // _ALhead_Variable
