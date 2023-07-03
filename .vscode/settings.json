@@ -1,6 +1,26 @@
 {
   "files.associations": {
-    "stdio.h": "c"
+    "*.h": "c",
+    "*.c": "c",
+    "stdio.h": "c",
+    "array": "c",
+    "deque": "c",
+    "string": "c",
+    "vector": "c",
+    "iterator": "c",
+    "string_view": "c",
+    "*.tcc": "c",
+    "functional": "c",
+    "limits": "c",
+    "ostream": "c",
+    "numeric": "c",
+    "streambuf": "c",
+    "tuple": "c",
+    "utility": "c",
+    "unordered_map": "c",
+    "type_traits": "c",
+    "concepts": "c",
+    "memory": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
 }
