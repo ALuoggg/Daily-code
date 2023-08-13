@@ -14,7 +14,7 @@ int main(void) {
 
   // 初始化_首
 
-  size_t 返回值; /// @brief 函数的返回值
+  int 返回值; /// @brief 函数的返回值
 
   // 初始化_次
 

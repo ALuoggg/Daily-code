@@ -8,16 +8,18 @@
 			"args": [
 				"-fcolor-diagnostics",
 				"-fansi-escape-codes",
-				"-O0",
+				"-O0", // 优化等级
 				"-g",
 				"${file}",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}", // 指定编译后的文件名
-				"-std=c17", // 指定C标准
+				// "-std=c17", // 指定C标准
 				"-Weverything", // 开启所有警告
 				"-Werror", // 把所有警告时为错误
-				"-Wno-vla", // 忽略指定警告
-				"-Wno-gnu-folding-constant", // 忽略指定警告
+				// "-Wno-vla", // 忽略指定警告
+				// "-Wno-gnu-folding-constant",
+				// "--analyze", // 只进行语法检查
+				// "-E", // 生成预处理文件
 			],
 			"options": {
 				"cwd": "${fileDirname}"

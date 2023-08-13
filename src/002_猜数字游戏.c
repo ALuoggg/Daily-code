@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "../include/ALhead_变量.h"
-
 // 函数原型声明
 
 int main(void);
@@ -15,7 +13,7 @@ void 猜数字游戏(void);
 int main(void) {
   // 初始化
   llong 用户输入的菜单;
-  srand((uint)time(NULL));
+  srand((unsigned int)time(NULL));
   // 开始执行
   do { // 循环->选择菜单
     printf("请选择菜单>:\n\t1:开始游戏\n\t0:退出程序\n\tothers:请重新输入\n"); // 提示菜单r选项

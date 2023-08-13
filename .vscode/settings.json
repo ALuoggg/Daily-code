@@ -20,7 +20,8 @@
     "unordered_map": "c",
     "type_traits": "c",
     "concepts": "c",
-    "memory": "c"
+    "memory": "c",
+    "random": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
 }

@@ -1,7 +1,7 @@
 // ***********************************************************************
 // 判断_头文件引用
-#ifndef _ALhead_Variable // 变量
-#define _ALhead_Variable // 变量
+#ifndef ALhead_Variable // 变量
+#define ALhead_Variable // 变量
 
 // ***********************************************************************
 // 引用头文件
@@ -11,17 +11,12 @@
 // ***********************************************************************
 // 函数原型声明
 
-/// @brief 打印数组的指定成员
-/// @param array 指定打印的数组
-/// @param arraySize 数组的字节数
-/// @param elementSize 元素的字节数
-/// @param printType 指定一个可以打印该类型数组的函数
-void print_array(const void *array, unsigned long long arraySize, unsigned long long elementSize, void (*printType)(const void *));
+#include "../head/ALhead_Variable.h"
 
 // ***********************************************************************
 // 函数定义
 
-void print_array(const void *array, unsigned long long arraySize, unsigned long long elementSize, void (*printType)(const void *)) {
+void printArray(const void *array, const unsigned long long arraySize, const unsigned long long elementSize, void (*printType)(const void *)) {
   unsigned long long elementConst; /// @brief 元素数量
   const char *array_2; /// @brief 打印的数组
   const char *arrayEnd; /// @brief 数组尾元素的首地址
@@ -45,4 +40,4 @@ void print_array(const void *array, unsigned long long arraySize, unsigned long 
 
 // ***********************************************************************
 // 结束判断_头文件引用
-#endif // _ALhead_Variable
+#endif // ALhead_Variable
